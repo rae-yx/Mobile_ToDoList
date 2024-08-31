@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.finalproject.fragments.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_contentsFragment"
+            app:destination="@id/contentsFragment"
+            app:popUpTo="@id/mainFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_mainFragment_to_signInFragment"
+            app:destination="@id/signInFragment"
+            app:popUpTo="@id/mainFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_mainFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment"
+            app:popUpTo="@id/mainFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.example.finalproject.fragments.SignInFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_sign_in" >
+        <action
+            android:id="@+id/action_signInFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment"
+            app:popUpTo="@id/signInFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_signInFragment_to_contentsFragment"
+            app:destination="@id/contentsFragment"
+            app:popUpTo="@id/signInFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.example.finalproject.fragments.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_to_contentsFragment"
+            app:destination="@id/contentsFragment"
+            app:popUpTo="@id/signUpFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_signUpFragment_to_signInFragment"
+            app:destination="@id/signInFragment"
+            app:popUpTo="@id/signUpFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/contentsFragment"
+        android:name="com.example.finalproject.fragments.ContentsFragment"
+        android:label="fragment_contents"
+        tools:layout="@layout/fragment_contents">
+        <action
+            android:id="@+id/action_contentsFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/contentsFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+</navigation>
